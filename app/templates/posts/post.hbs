@@ -8,4 +8,16 @@
   {{model.content}}
 </div>
 
-<button {{action edit model}}> edit </button>
+{{#if isEditing}}
+  <div>
+    {{input type="text" value=model.title class="post-title"}}
+  </div>
+  <div>
+    {{textarea value=model.content class="post-content"}}
+  </div>
+  <div>
+    <button{{action "savePost" model}}> save </button>
+  </div>
+{{else}} 
+  <button {{action 'editPost' model}}> edit </button>
+{{/if}}
