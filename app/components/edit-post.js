@@ -10,8 +10,10 @@ export default Ember.Component.extend({
       this.set('newContent', post.get('content'));
     },
     savePost(post){
-      post.set('title', this.get('newTitle'));
-      post.set('content', this.get('newContent'));
+      post.setProperties({
+        title:  this.get('newTitle'),
+        content: this.get('newContent')
+      });
       post.save();
       this.set('isEditing', false);
     },
