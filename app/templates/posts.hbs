@@ -1,0 +1,7 @@
+<ul>
+  {{#each model as |post|}}
+    <li>
+      {{#link-to 'index'}} {{post.title}} {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
