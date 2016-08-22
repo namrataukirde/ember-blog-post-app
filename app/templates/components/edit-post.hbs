@@ -1,0 +1,14 @@
+{{#if isEditing}}
+  <div>
+    {{input type="text" value=newTitle class="post-title"}}
+  </div>
+  <div>
+    {{textarea value=newContent class="post-content"}}
+  </div>
+  <div>
+    <button{{action "savePost" post}}> save </button>
+  	<button {{action 'cancel' post}}> cancel </button>
+  </div>
+{{else}} 
+  <button {{action 'editPost' post}}> edit </button>
+{{/if}}
