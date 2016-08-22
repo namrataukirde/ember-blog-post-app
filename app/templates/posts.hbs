@@ -1,7 +1,8 @@
 <ul>
   {{#each model as |post|}}
     <li>
-      {{#link-to 'index'}} {{post.title}} {{/link-to}}
+      {{#link-to 'posts.post' post.id}} {{post.title}} {{/link-to}}
     </li>
   {{/each}}
 </ul>
+{{outlet}}
